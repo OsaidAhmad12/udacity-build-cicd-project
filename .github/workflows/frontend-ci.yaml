@@ -1,17 +1,12 @@
 name: Frontend Continuous Integration
 
 on:
-  push:
-    branches:
-      - master
-
   pull_request:
     branches:
       - main
     paths:
       - 'starter/frontend/**'
       - '.github/workflows/frontend-ci.yaml'
-
   workflow_dispatch:
 
 jobs:
@@ -91,5 +86,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build frontend
-        run: npm run build
+      - name: Run tests
+        run: CI=true npm test
+
+      - name: Build frontend Docker image
+        run: docker build -t frontend:ci .

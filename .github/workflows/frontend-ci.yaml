@@ -91,3 +91,4 @@ jobs:
 
       - name: Build frontend Docker image
         run: docker build -t frontend:ci .
+# Reviewer automatic PR trigger verification

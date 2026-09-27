@@ -74,3 +74,4 @@ jobs:
       - name: Build Docker image
         run: |
           docker build -t backend-ci:${{ github.sha }} ./starter/backend
+# Reviewer automatic PR trigger verification

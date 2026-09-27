@@ -136,4 +136,4 @@ jobs:
           kubectl set image deployment/frontend \
             frontend=$ECR_REGISTRY/frontend:$IMAGE_TAG
 
-          kubectl rollout status deployment/frontend --timeout=5m# Automatic push trigger verification
+          kubectl rollout status deployment/frontend --timeout=5m
